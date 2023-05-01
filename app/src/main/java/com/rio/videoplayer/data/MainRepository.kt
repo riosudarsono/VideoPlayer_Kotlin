@@ -22,7 +22,7 @@ class MainRepository @Inject constructor(private val mainService: MainService) {
             .subscribeOn(Schedulers.io())
             .subscribe(
                 {
-                    Resource.success(it.results)
+                    data.value = Resource.success(it.results)
                 },
                 {
                     data.value = Resource.error(null, it.message)
