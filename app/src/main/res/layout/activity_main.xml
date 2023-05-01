@@ -10,20 +10,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <com.google.android.exoplayer2.ui.PlayerView
-            android:id="@+id/playerView"
-            android:focusable="true"
+        <RelativeLayout
+            android:id="@+id/rl_video"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@color/black"
-            app:controller_layout_id="@layout/playback_control"
-            app:repeat_toggle_modes="none"
-            app:show_timeout="45000"
-            app:surface_type="texture_view"
+            android:layout_height="wrap_content"
             android:visibility="gone"
             tools:visibility="visible">
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/playerView"
+                android:focusable="true"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/black"
+                app:controller_layout_id="@layout/playback_control"
+                app:repeat_toggle_modes="none"
+                app:show_timeout="45000"
+                app:surface_type="texture_view"/>
+            <ImageView
+                android:id="@+id/iv_full"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_fullscreen_orange"
+                android:layout_margin="12dp"/>
+        </RelativeLayout>
 
-        </com.google.android.exoplayer2.ui.PlayerView>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_video"
             android:layout_width="match_parent"
